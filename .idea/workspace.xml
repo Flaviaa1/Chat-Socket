@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f28592d-03b4-40c6-9622-cacf59cf44c2" name="Default Changelist" comment="" />
+    <list default="true" id="7f28592d-03b4-40c6-9622-cacf59cf44c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatMaltiUser/com/company/ServerConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ServerConnection.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +27,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="29ZGiHcXtkq80zXQQlUKkwMwcpx" />
   <component name="PropertiesComponent">
@@ -78,6 +91,19 @@
       <updated>1653313319424</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ChatMaltiUser$Client.ic" NAME="Client Coverage Results" MODIFIED="1653450641127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

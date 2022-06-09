@@ -1,44 +1,54 @@
 package com.company;
-
-import java.awt.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
 
 public class Server {
-    private static String[] names = {"Wily", "Juan", "Car", "Matias"};
-    private static String[] adjs = {"Amable", "Desagradable", "Pretensioso", "Aburrido"};
-    private static final int PORT = 9090;
+    private final ServerSocket serverSocket;
 
-    private static ArrayList<ClientHandler> clients = new ArrayList<>();
-    private static ExecutorService pool = Executors.newFixedThreadPool(4);
+    public Server(ServerSocket serverSocket) {
 
-    public static void main(String[] args) throws IOException {
-        // write your code here
-        ServerSocket listener = new ServerSocket(PORT);
+        this.serverSocket = serverSocket;
+    }
+    public void startServer() {
+        try {
+            System.out.println("Corriendo..");
+            //  Escuche las conexiones (clientes para conectar) en el puerto 5000.
+            while (!serverSocket.isClosed()) {
+                // Se cerrará en el  Client Handler.
+                Socket socket = serverSocket.accept();
+                System.out.println("UN NUEVO CLIENTE SE HA CONECTADO!");
+                ClientHandler clientHandler = new ClientHandler(socket);
+                Thread thread = new Thread(clientHandler);
 
-        while (true) {
-            System.out.println("[SERVER] Esperando conexion del cliente..");
-            Socket client = listener.accept();
-            System.out.println("[SERVER] Cliente conectado!");
-            ClientHandler clientThread = new ClientHandler(client, clients);
-            clients.add(clientThread);
-            pool.execute(clientThread);
+                // El método de inicio inicia la ejecución de un hilo.
+                // Cuando llamas a start(), se llama al método de ejecución.
+                // El sistema operativo programa los hilos.
+                thread.start();
+            }
+        } catch (IOException e) {
+            closeServerSocket();
+        }
+    }
+
+    // Close the server
+    public void closeServerSocket() {
+        try {
+            if (serverSocket != null) {
+                serverSocket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
 
-    public static String getRandomName() {
-        String name = names[(int) (Math.random() * names.length)];
-        String adj = adjs[(int) (Math.random() * adjs.length)];
-        return name + " " + adj;
+    // Run the program.
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(5000);
+        Server server = new Server(serverSocket);
+        server.startServer();
     }
 
 }
